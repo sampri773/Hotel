@@ -10,5 +10,6 @@ import java.util.List;
 public class Room {
     private int id;
     private Client client;
+    private double price;
     private List<Bed> bed;
 }
