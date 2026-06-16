@@ -8,5 +8,5 @@ import lombok.Getter;
 public class Room {
     private int id;
     private Client client;
-    private Lit lit;
+    private Bed lit;
 }
