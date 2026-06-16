@@ -13,6 +13,6 @@ public class Hotel {
     private String numTelephone;
     private String mail;
     private Rate rate;
-    private List<Chambre> chambres;
+    private List<Room> rooms;
 
 }
