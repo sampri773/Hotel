@@ -10,9 +10,9 @@ public class Hotel {
 
     private int id;
     private String name;
-    private String numTelephone;
+    private String phone;
     private String mail;
     private Rate rate;
-    private List<Chambre> chambres;
+    private List<Room> room;
 
 }
