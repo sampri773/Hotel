@@ -1,9 +1,12 @@
 package com.hotel;
 
+<<<<<<< Updated upstream
 public class Reservation {
 
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +34,9 @@ public class Reservation {
         if (startDate.isAfter(endDate)) {
             throw new IllegalArgumentException("The start date must be before or equal to end date");
     }
->>>>>>> Stashed changes
+
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
