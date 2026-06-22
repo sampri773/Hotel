@@ -14,5 +14,6 @@ public class Hotel {
     private String address;
     private Rate rate;
     private List<Room> rooms;
-
+    private List<Client> clients;
+    private List<Reservation> reservations;
 }
