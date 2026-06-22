@@ -7,12 +7,13 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 public class Hotel {
-
     private int id;
     private String name;
     private String phone;
     private String mail;
+    private String address;
     private Rate rate;
-    private List<Room> room;
-
+    private List<Room> rooms;
+    private List<Client> clients;
+    private List<Reservation> reservations;
 }
