@@ -9,7 +9,7 @@ import java.util.List;
 public class Hotel {
     private int id;
     private String name;
-    private String numTelephone;
+    private String phone;
     private String mail;
     private String address;
     private Rate rate;
