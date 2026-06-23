@@ -12,4 +12,6 @@ public class Room {
     private Client client;
     private double price;
     private List<Bed> bed;
+    private PlaceNumber capacity;
+    private List<Reservation> reservations;
 }

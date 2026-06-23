@@ -9,13 +9,13 @@ public class Payment {
 
         private String id;
         private Reservation reservation;
-        private double montant;
+        private double price;
         private PaymentMode mode;
 
-        public String genererRecu() {
+        public String recuGenerate() {
             return "Reçu Paiement #" + id +
-                    "\nClient: " + reservation.getClient().getNom() +
-                    "\nMontant: " + montant +
+                    "\nClient: " + reservation.getClient().getFirstName() +
+                    "\nMontant: " + price +
                     "\nMode: " + mode;
         }
 
