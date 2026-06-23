@@ -5,10 +5,11 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Client {
-    private int id;
+
+public class Manager{
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
-    private String phone;
+
 }
