@@ -15,4 +15,3 @@ public class Reservation {
     private LocalDate endDate;
     private int guestCount;
 }
-;
