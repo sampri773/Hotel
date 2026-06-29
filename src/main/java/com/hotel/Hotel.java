@@ -16,6 +16,7 @@ public class Hotel {
     private String mail;
     private String address;
     private Rate rate;
+    private Manager manager;
     private List<Room> rooms;
     private List<Client> clients;
     private List<Reservation> reservations;

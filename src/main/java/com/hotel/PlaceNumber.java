@@ -1,5 +1,5 @@
 package com.hotel;
 
 public enum PlaceNumber {
-    ONE, TWO
+    ONE, TWO, THREE, CUSTOMIZED
 }

@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 
 public class Manager{
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
