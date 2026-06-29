@@ -1,10 +1,7 @@
 package com.hotel;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-@AllArgsConstructor
-@Getter
+
 public class Payment {
 
         private String id;
@@ -19,5 +16,26 @@ public class Payment {
                     "\nMode: " + mode;
         }
 
+        public Payment(String id, Reservation reservation, double price, PaymentMode mode) {
+                this.id = id;
+                this.reservation = reservation;
+                this.price = price;
+                this.mode = mode;
+        }
 
+        public String getId() {
+                return id;
+        }
+
+        public Reservation getReservation() {
+                return reservation;
+        }
+
+        public double getPrice() {
+                return price;
+        }
+
+        public PaymentMode getMode() {
+                return mode;
+        }
 }
