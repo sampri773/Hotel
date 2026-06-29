@@ -1,14 +1,10 @@
 package com.hotel;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@AllArgsConstructor
-@Getter
 public class Hotel {
     private int id;
     private String name;
@@ -20,6 +16,59 @@ public class Hotel {
     private List<Room> rooms;
     private List<Client> clients;
     private List<Reservation> reservations;
+
+    public Hotel(int id, String name, String phone, String mail, String address, Rate rate, Manager manager, List<Room> rooms, List<Client> clients, List<Reservation> reservations) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.mail = mail;
+        this.address = address;
+        this.rate = rate;
+        this.manager = manager;
+        this.rooms = rooms;
+        this.clients = clients;
+        this.reservations = reservations;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Rate getRate() {
+        return rate;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
 
     public List<Room> getAvailableRooms(LocalDate startDate, LocalDate endDate, int guestCount) {
         List<Room> availableRooms = new ArrayList<>();
