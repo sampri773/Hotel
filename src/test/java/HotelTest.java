@@ -57,30 +57,19 @@ public class HotelTest {
                 3
         );
 
-        reservation2 = new Reservation(
-                2, charles, room3,
-                LocalDate.of(2026, 7, 15),
-                LocalDate.of(2026, 7, 30),
-                1
-        );
+        var reservation1 = new Reservation(1, john, null, LocalDate.of(2026, 7, 4), LocalDate.of(2026, 7, 6), 3);
+        var reservation2 = new Reservation(2, charles, null, LocalDate.of(2026, 7, 15), LocalDate.of(2026,7, 30), 1);
+        var reservation3 = new Reservation(3, marc, null, LocalDate.of(2026,7, 4), LocalDate.of(2026, 7, 8), 3);
 
         // Ajouter réservations aux rooms
         room1.getReservations().add(reservation1);
         room3.getReservations().add(reservation2);
 
-        // Hotel
-        hotel = new Hotel(
-                1,
-                "Beach Palm",
-                "0345562488",
-                "beachpalm@gmail.com",
-                "Ivandry",
-                Rate.THREE,
-                new Manager(1, "Jack", "Brel", "brel@gmail.com"),
-                List.of(room1, room2, room3),
-                List.of(guy, louis),
-                List.of(reservation1, reservation2)
-        );
+        reservation1.setRoom(room1);
+        reservation2.setRoom(room3);
+        reservation3.setRoom(room1);
+
+        var manager = new Manager(1, "Jack", "Brel", "brel@gmail.com");
 
     }
 
@@ -90,16 +79,19 @@ public class HotelTest {
         assertEquals(RoomStatus.OCCUPIED, status);
     }
 
+    @Test
     void seeIfTheRoom3IsFree() {
         RoomStatus status = room3.getRoomStatus(LocalDate.of(2026, 6, 29));
         assertEquals(RoomStatus.FREE, status);
     }
 
+    @Test
     void seeIfThereIsOverlapReservationInRoom1ShouldReturnTrue() {
         boolean result = room1.isOverlap(LocalDate.of(2026, 7, 4), LocalDate.of(2026, 7, 8));
         assertEquals(true, result);
     }
 
+    @Test
     void seeIfThereIsNoOverlapReservationInRoom2ShouldReturnFalse() {
         boolean result = room2.isOverlap(LocalDate.of(2026, 9, 2), LocalDate.of(2026, 9, 10));
         assertEquals(false, result);
