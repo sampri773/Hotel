@@ -15,6 +15,7 @@ public class Room {
     private List<Bed> bed;
     private PlaceNumber capacity;
     private List<Reservation> reservations;
+    private RoomStatus roomStatus;
 
     public RoomStatus getRoomStatus(LocalDate date) {
         for (Reservation r : reservations) {
