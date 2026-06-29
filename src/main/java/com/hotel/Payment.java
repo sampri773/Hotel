@@ -25,7 +25,6 @@ public class Payment {
                         return false;
                 }
 
-
                 switch (mode) {
                         case MOBILEMONEY:
                                 return verifyReference();
