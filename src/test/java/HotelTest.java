@@ -36,14 +36,18 @@ public class HotelTest {
         var charles = new Client(4, "Leroy", "Charles", "charles@gmail.com", "0345987744");
         var marc = new Client(5, "Didier", "Marc", "marc@gmail.com", "0344596687");
 
-        var reservation1 = new Reservation(1, john, room1, LocalDate.of(2026, 7, 4), LocalDate.of(2026, 7, 6), 3);
-        var reservation2 = new Reservation(2, charles, room3, LocalDate.of(2026, 7, 15), LocalDate.of(2026,7, 30), 1);
-        var reservation3 = new Reservation(3, marc, room1, LocalDate.of(2026,7, 4), LocalDate.of(2026, 7, 8), 3);
+        var reservation1 = new Reservation(1, john, null, LocalDate.of(2026, 7, 4), LocalDate.of(2026, 7, 6), 3);
+        var reservation2 = new Reservation(2, charles, null, LocalDate.of(2026, 7, 15), LocalDate.of(2026,7, 30), 1);
+        var reservation3 = new Reservation(3, marc, null, LocalDate.of(2026,7, 4), LocalDate.of(2026, 7, 8), 3);
 
         var room1 = new Room(1, guy, 10, List.of(bed1, bed2), PlaceNumber.THREE, List.of(reservation1), RoomStatus.OCCUPIED);
         var room2 = new Room(2 , louis, 5, List.of(bed1), PlaceNumber.TWO, List.of(), RoomStatus.OCCUPIED);
         var room3 = new Room(3, null, 3, List.of(bed2), PlaceNumber.ONE, List.of(reservation2), RoomStatus.FREE);
         var room4 = new Room(4, null, 10, List.of(bed3), PlaceNumber.CUSTOMIZED, List.of(), RoomStatus.FREE);
+
+        reservation1.setRoom(room1);
+        reservation2.setRoom(room3);
+        reservation3.setRoom(room1);
 
         var manager = new Manager(1, "Jack", "Brel", "brel@gmail.com");
 
@@ -56,16 +60,19 @@ public class HotelTest {
         assertEquals(RoomStatus.OCCUPIED, status);
     }
 
+    @Test
     void seeIfTheRoom3IsFree() {
         RoomStatus status = room3.getRoomStatus(LocalDate.of(2026, 6, 29));
         assertEquals(RoomStatus.FREE, status);
     }
 
+    @Test
     void seeIfThereIsOverlapReservationInRoom1ShouldReturnTrue() {
         boolean result = room1.isOverlap(LocalDate.of(2026, 7, 4), LocalDate.of(2026, 7,8));
         assertEquals(true, result);
     }
 
+    @Test
     void seeIfThereIsNoOverlapReservationInRoom2ShouldReturnFalse() {
         boolean result = room2.isOverlap(LocalDate.of(2026, 9, 2), LocalDate.of(2026,9,10));
         assertEquals(false, result);

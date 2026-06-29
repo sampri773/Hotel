@@ -27,12 +27,12 @@ public class Room {
     }
 
     public boolean isOverlap(LocalDate start, LocalDate end) {
-        for(Reservation r : reservations) {
-            boolean overlap = !end.isBefore(r.getStartDate()) && !end.isAfter(r.getEndDate());
+        for (Reservation r : reservations) {
+            boolean overlap = start.isBefore(r.getEndDate()) && end.isAfter(r.getStartDate());
             if (overlap) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }
