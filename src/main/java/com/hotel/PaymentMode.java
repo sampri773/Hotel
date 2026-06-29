@@ -1,5 +1,9 @@
 package com.hotel;
 
 public enum PaymentMode {
-    CASH, CARD
+    CARD,
+    BANK_TRANSFER,
+    MOBILEMONEY,
+    CASH,
+    CHECK
 }
