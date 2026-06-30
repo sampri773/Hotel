@@ -113,7 +113,7 @@ public class Hotel {
 
     public Reservation createReservation(Client client,Room room,LocalDate startDate,LocalDate endDate,int guestCount){
 
-        // Vérifier les dates
+
         if (startDate == null || endDate == null) {
             throw new IllegalArgumentException("Les dates ne peuvent pas être nulles.");
         }
@@ -122,17 +122,17 @@ public class Hotel {
             throw new IllegalArgumentException("La date de fin doit être après la date de début.");
         }
 
-        // Vérifier que le client existe
+
         if (client == null) {
             throw new IllegalArgumentException("Client introuvable.");
         }
 
-        // Vérifier que la chambre existe
+
         if (room == null) {
             throw new IllegalArgumentException("Chambre introuvable.");
         }
 
-        // Vérifier la capacité
+
         if (guestCount > room.getCapacity().ordinal()) {
             throw new IllegalArgumentException("La capacité de la chambre est insuffisante.");
         }
