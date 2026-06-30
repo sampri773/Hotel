@@ -44,4 +44,8 @@ public class Reservation {
     public int getGuestCount() {
         return guestCount;
     }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
 }
